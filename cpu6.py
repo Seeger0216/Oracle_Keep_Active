@@ -3,8 +3,11 @@ import psutil
 import math
 import threading
 
+max_cpu = 90
+min_cpu = 20
 target_cpu_utilization = 15
 Thread_num = 4
+starts=0
 
 # 限制CPU在target_cpu_utilization以下
 def wait_for_cpu_utilization():
