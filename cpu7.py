@@ -3,10 +3,10 @@ import psutil
 import math
 import threading
 
-max_cpu = 90
+max_cpu = 80
 min_cpu = 20
 target_cpu_utilization = 15
-Thread_num = 4
+Thread_num = 12
 starts=0
 
 # 限制CPU在target_cpu_utilization以下
@@ -23,7 +23,7 @@ def intensive_calculation():
       if starts == 1:
         wait_for_cpu_utilization()
         # Do the intensive calculation
-        math.factorial(100000)
+        math.factorial(70000)
 
 # 多线程
 for i in range(Thread_num):
