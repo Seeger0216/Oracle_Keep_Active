@@ -34,5 +34,5 @@ while True:
         current_cpu_utilization = psutil.cpu_percent()
         if current_cpu_utilization >= max_cpu:
             starts=0
-        elif current_cpu_utilization<= min_cpu:
+        elif current_cpu_utilization <= min_cpu:
             starts=1
