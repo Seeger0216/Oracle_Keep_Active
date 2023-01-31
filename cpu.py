@@ -9,7 +9,7 @@ def wait_for_cpu_utilization():
     while True:
         current_cpu_utilization = psutil.cpu_percent() / 100
         if current_cpu_utilization >= target_cpu_utilization:
-            time.sleep(0.01)
+            time.sleep(0.7)
         elif current_cpu_utilization > 0.9:
             time.sleep(10)
             continue
