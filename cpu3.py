@@ -11,7 +11,7 @@ starts=0
 
 def intensive_calculation():
     while True:
-        if starts == 1
+        if starts == 1:
         # Do the intensive calculation
             math.factorial(100000)
 
