@@ -1,8 +1,10 @@
 import time
 import psutil
 import math
+import threading
 
 target_cpu_utilization = 15
+Thread_num = 4
 
 def wait_for_cpu_utilization():
     while True:
@@ -12,7 +14,13 @@ def wait_for_cpu_utilization():
         else:
             break
 
-while True:
-    wait_for_cpu_utilization()
-    # Do the intensive calculation
-    math.factorial(1000000)
+def intensive_calculation():
+    while True:
+        wait_for_cpu_utilization()
+        # Do the intensive calculation
+        math.factorial(100000)
+
+# Start two threads for each core
+for i in range(Thread_num):
+    t = threading.Thread(target=intensive_calculation)
+    t.start()
