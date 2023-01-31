@@ -20,7 +20,7 @@ def intensive_calculation():
         # Do the intensive calculation
         math.factorial(100000)
 
-# Start two threads for each core
+# 多线程
 for i in range(Thread_num):
     t = threading.Thread(target=intensive_calculation)
     t.start()
