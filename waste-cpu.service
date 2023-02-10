@@ -1,0 +1,11 @@
+[Unit]
+Description=Waste-CPU
+After=network.target
+[Service]
+User=root
+Type=simple
+RemainAfterExit=yes
+ExecStart=nice -n 16 python3 /home/ubuntu/cpu.py
+Restart=always
+[Install]
+WantedBy=multi-user.target
