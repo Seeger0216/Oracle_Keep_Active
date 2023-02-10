@@ -8,6 +8,7 @@ target_cpu_utilization = 15
 Thread_num = 12
 starts = 1
 core = cpu_count()
+
 # 判断CPU核心数
 if core == 2:
     sleep_sec = 0.6
