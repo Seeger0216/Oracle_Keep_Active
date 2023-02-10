@@ -3,6 +3,7 @@ import psutil
 import math
 import threading
 from multiprocessing import cpu_count
+import platform
 
 target_cpu_utilization = 15
 Thread_num = 12
@@ -10,12 +11,15 @@ starts = 1
 core = cpu_count()
 
 # 判断CPU核心数
-if core == 2:
-    sleep_sec = 0.6
+if platform.machine() == 'aarch64':
+    if core == 2:
+        sleep_sec = 0.6
     
-if core == 4:
-    sleep_sec = 0.1
-    
+    if core == 4:
+        sleep_sec = 0.1
+
+if platform.machine() == ''x86_64'':
+    sleep_sec = 1.2
 # 限制CPU在target_cpu_utilization以下
 def wait_for_cpu_utilization():
     while True:
